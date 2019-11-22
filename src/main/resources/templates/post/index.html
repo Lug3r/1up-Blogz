@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org/">
+<head>
+    <meta charset="UTF-8">
+    <title>Gamer's Posts</title>
+</head>
+<body>
+
+<table>
+    <tr>
+        <th>Edit</th>
+        <th>Comments</th>
+    </tr>
+    <tr th:each="post : ${posts}">
+        <td><a th:href="'post/edit/' +${post.id}" th:text="edit"></a></td>
+        <td th:text="${post.description}"></td>
+
+
+    </tr>
+</table>
+</body>
+</html>

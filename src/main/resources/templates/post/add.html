@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org/">
+<head>
+
+
+</head>
+<body>
+<div class="main">
+<form method="post" th:object="${post}">
+    <div class="form-group">
+        <label th:for="description">Post</label>
+        <textarea class="form-control" th:field="*{description}" />
+<!--        <span th:errors="{description}" class="error"></span>-->
+    </div>
+
+    <input type="submit" value="Add Post" />
+</form>
+</div>
+
+</body>
+</html>

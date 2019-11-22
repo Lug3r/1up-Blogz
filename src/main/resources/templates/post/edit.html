@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org/">
+<head>
+    <meta charset="UTF-8">
+    <title>Edit Gamer's Posts</title>
+</head>
+<body>
+<form method="post" th:object="${post}">
+    <label th:for="description">Post Description</label>
+    <input th:field="*{description}" type="text"/>
+    <input type="submit" value="edit description"/>
+
+</form>
+
+
+</body>
+</html>
