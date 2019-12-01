@@ -31,6 +31,8 @@ public class PostController {
     @RequestMapping(value = "add", method = RequestMethod.GET)
     public String add(Model model){
         model.addAttribute("title", "Add Post");
+        model.addAttribute("preference", "Add preference");
+        model.addAttribute("game", "Add game");
         model.addAttribute(new Post());
         return "post/add";
     }
@@ -39,13 +41,15 @@ public class PostController {
     public String processAdd(Model model , @ModelAttribute @Valid Post newPost, HttpSession session, Errors errors){
         if (errors.hasErrors()) {
             model.addAttribute("Post", "Add Post");
+            model.addAttribute("preference", "Add preference");
+            model.addAttribute("game", "Add game");
             return "post/add";
         }
 
 
 
         postDao.save(newPost);
-        return "redirect:/post/add";
+        return "redirect:/post";
 
     }
 
@@ -63,6 +67,8 @@ public class PostController {
     public String processEditForm(@PathVariable int postId, @ModelAttribute Post newPost) {
         Post editedPost = postDao.findOne(postId);
         editedPost.setDescription(newPost.getDescription());
+        editedPost.setPreference(newPost.getPreference());
+        editedPost.setGame(newPost.getGame());
         postDao.save(editedPost);
 
         return "redirect:/post";

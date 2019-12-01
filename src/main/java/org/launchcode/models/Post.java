@@ -20,13 +20,25 @@ public class Post {
     @Size(min = 3, max = 500)
     private String description;
 
+    @NotNull
+    @Size(min = 3, max = 500)
+    private String preference;
+
+    @NotNull
+    @Size(min = 3, max = 500)
+    private String game;
+
+
+
 
 
     public Post() { }
 
-    public Post(String description) {
+    public Post(String description, String preference, String game) {
 
         this.description = description;
+        this.preference = preference;
+        this.game = game;
 
     }
 
@@ -38,8 +50,24 @@ public class Post {
         return description;
     }
 
+    public String getPreference() {
+        return preference;
+    }
+
+    public String getGame() {
+        return game;
+    }
+
     public void setDescription(String description) {
 
         this.description = description;
+    }
+    public void setPreference(String preference) {
+
+        this.preference = preference;
+    }
+    public void setGame(String game) {
+
+        this.game = game;
     }
 }

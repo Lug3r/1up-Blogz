@@ -10,10 +10,15 @@
     <tr>
         <th>Edit</th>
         <th>Comments</th>
+        <th>Preference</th>
+        <th>Game</th>
+        <th>Reply</th>
     </tr>
     <tr th:each="post : ${posts}">
         <td><a th:href="'post/edit/' +${post.id}" th:text="edit"></a></td>
         <td th:text="${post.description}"></td>
+        <td th:text="${post.preference}"></td>
+        <td th:text="${post.game}"></td>
 
 
     </tr>
